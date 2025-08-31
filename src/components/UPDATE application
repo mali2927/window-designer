@@ -1,0 +1,11 @@
+UPDATE application
+SET program_id_1 = CASE WHEN program_id_1 = 30 THEN NULL ELSE program_id_1 END,
+    program_id_2 = CASE WHEN program_id_2 = 30 THEN NULL ELSE program_id_2 END,
+    program_id_3 = CASE WHEN program_id_3 = 30 THEN NULL ELSE program_id_3 END,
+    program_id_4 = CASE WHEN program_id_4 = 30 THEN NULL ELSE program_id_4 END
+WHERE (program_id_1 = 30 OR
+       program_id_2 = 30 OR
+       program_id_3 = 30 OR
+       program_id_4 = 30)
+  AND created_at < '2025-02-28';
+  
